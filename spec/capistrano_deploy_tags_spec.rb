@@ -69,5 +69,10 @@ describe Capistrano::DeployTags do
         tags.first.should =~ /^test-\d{4}\.\d{2}\.\d{2}/
       end
     end
+
+    it "can read the config" do
+      y configuration.task_list(:all).map(&:name)
+      y configuration.task_list(:all)
+    end
   end
 end
